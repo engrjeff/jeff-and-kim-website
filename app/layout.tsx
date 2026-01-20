@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Inter, Cinzel, Playfair } from 'next/font/google';
 import './globals.css';
+import { site } from '@/lib/site';
+import { Footer } from '@/components/footer';
+import { FAQ } from '@/components/faq';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -22,8 +25,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Jeff & Kim',
-  description: 'The official website of Jeff & Kim',
+  title: {
+    template: `%s | ${site.title}`,
+    default: site.title,
+  },
+  description: site.description,
+  openGraph: {
+    title: site.title,
+    images: [
+      {
+        url: site.opengraphImage,
+        alt: site.title,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -32,11 +49,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable} antialiased`}
       >
-        {children}
+        <main>
+          {children}
+          <FAQ />
+        </main>
+        <Footer />
       </body>
     </html>
   );

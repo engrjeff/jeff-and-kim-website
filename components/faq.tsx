@@ -35,7 +35,7 @@ const faq = [
 
 export const FAQ = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12">
+    <section className="min-h-screen flex items-center justify-center px-6 py-12 border-t border">
       <div className="max-w-xl">
         <div className="mb-8">
           <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-blue-950">
@@ -55,6 +55,6 @@ export const FAQ = () => {
           ))}
         </Accordion>
       </div>
-    </div>
+    </section>
   );
 };
