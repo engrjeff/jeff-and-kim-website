@@ -31,14 +31,22 @@ const faq = [
     answer:
       'Yes, the Garden Hive venue for ceremony and reception areas are covered so you can rest assured that weather will not impact the event.',
   },
+  {
+    question: 'Are there parking spaces available at the venue?',
+    answer:
+      'Yes, there are plenty of parking spaces available at The Garden Hive for all our guests.',
+  },
 ];
 
 export const FAQ = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-12 border-t border">
+    <section
+      id="faq"
+      className="min-h-screen flex items-center justify-center px-6 py-12 border-t border"
+    >
       <div className="max-w-xl">
         <div className="mb-8">
-          <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-blue-950">
+          <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-kimjeff">
             Common Questions & Concerns
           </h2>
         </div>

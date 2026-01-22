@@ -4,6 +4,7 @@ import './globals.css';
 import { site } from '@/lib/site';
 import { Footer } from '@/components/footer';
 import { FAQ } from '@/components/faq';
+import { NavigationMenu } from '@/components/navigation-menu';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable} antialiased`}
       >
+        <NavigationMenu />
         <main>
           {children}
           <FAQ />

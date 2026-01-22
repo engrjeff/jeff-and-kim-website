@@ -18,12 +18,6 @@ export default function Page() {
           April 20th, 2026 | The Garden Hive
         </p>
 
-        <img
-          src="/assets/kimjeff-monogram-only.svg"
-          alt="Kim and Jeff"
-          className="object-contain size-72 lg:size-96 -my-10 lg:-my-14"
-        />
-
         <blockquote className="text-center italic">
           <p className=" lg:text-xl font-decorative">
             &ldquo;He has made everything beautiful in its time&rdquo;
@@ -32,8 +26,14 @@ export default function Page() {
             Ecclesiastes 3:11
           </cite>
         </blockquote>
+
+        <img
+          src="/assets/kimjeff-monogram-only.svg"
+          alt="Kim and Jeff"
+          className="object-contain size-72 lg:size-96 -my-10 lg:-my-14"
+        />
       </section>
-      <section className="px-6 py-10 lg:p-20 bg-kimjeff text-white text-center space-y-4">
+      <section className="px-6 py-10 lg:p-20 bg-primary text-white text-center space-y-4">
         <h2 className="font-decorative italic font-bold text-lg lg:text-2xl text-center">
           We want to celebrate our union with you!
         </h2>
@@ -41,7 +41,10 @@ export default function Page() {
           <Link href="/rsvp">RSVP Now</Link>
         </Button>
       </section>
-      <section className="min-h-screen bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center">
+      <section
+        id="schedule"
+        className="min-h-screen bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center"
+      >
         <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center mb-8 text-kimjeff">
           Wedding Schedule
         </h2>

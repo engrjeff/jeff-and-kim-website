@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="bg-kimjeff text-white px-6 py-10 flex flex-col items-center justify-center">
+    <footer className="bg-primary text-white px-6 py-10 flex flex-col items-center justify-center">
       <img
         src="/assets/kimjeff-monogram-only-white.svg"
         alt="Kim and Jeff"
