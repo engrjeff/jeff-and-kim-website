@@ -1,6 +1,6 @@
 {
   "name": "Jeff & Kim",
-  "short_name": "JK",
+  "short_name": "Jeff & Kim",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#02173b",
-  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "background_color": "#030a1d",
   "display": "standalone"
 }

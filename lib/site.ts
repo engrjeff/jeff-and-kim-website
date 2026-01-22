@@ -1,6 +1,6 @@
 export const site = {
-  title: 'Jeff & Kim',
-  description: 'The wedding of Jeff & Kim',
+  title: 'Kim & Jeff',
+  description: 'The wedding of Kim & Jeff',
   opengraphImage:
-    'https://res.cloudinary.com/abide-in-the-vine/image/upload/v1768923428/jeffkim/kimjeff-og-image_r39xlx.png',
+    'https://res.cloudinary.com/abide-in-the-vine/image/upload/v1769108141/jeffkim/kimjeff-og-image_zf5a03.png',
 };

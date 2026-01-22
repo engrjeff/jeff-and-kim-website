@@ -5,33 +5,35 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-      <section className="min-h-screen bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center">
-        <p className="font-decorative italic text-xl">The wedding of</p>
-        <h1 className="text-center font-bold text-7xl text-kimjeff lg:text-9xl font-elegant uppercase tracking-tighter flex items-center">
-          Jeff{' '}
+      <section
+        id="home"
+        className="min-h-screen px-4 bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-top bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4"
+      >
+        <img
+          src="/assets/monogram-v2-on-white.svg"
+          alt="Kim and Jeff"
+          className="object-contain size-20 mb-6"
+        />
+        <p className="font-decorative text-xl">The wedding of</p>
+        <h1 className="text-center font-medium text-7xl text-kimjeff lg:text-9xl font-elegant uppercase tracking-tighter flex items-center">
+          Kim{' '}
           <span className="font-serif font-normal text-2xl inline-block mx-4">
             &
           </span>{' '}
-          Kim
+          Jeff
         </h1>
-        <p className="font-decorative italic text-right text-xl">
-          April 20th, 2026 | The Garden Hive
+        <p className="font-decorative text-right text-xl mb-10">
+          April 20, 2026 | The Garden Hive
         </p>
 
-        <blockquote className="text-center italic">
-          <p className=" lg:text-xl font-decorative">
+        <blockquote className="text-center italic text-lg">
+          <p className=" lg:text-xl font-decorative mb-4">
             &ldquo;He has made everything beautiful in its time&rdquo;
           </p>
-          <cite className="not-italic uppercase tracking-wider text-blue-950 font-semibold font-elegant text-sm">
+          <cite className="not-italic uppercase tracking-wider text-kimjeff font-semibold font-elegant text-sm">
             Ecclesiastes 3:11
           </cite>
         </blockquote>
-
-        <img
-          src="/assets/kimjeff-monogram-only.svg"
-          alt="Kim and Jeff"
-          className="object-contain size-72 lg:size-96 -my-10 lg:-my-14"
-        />
       </section>
       <section className="px-6 py-10 lg:p-20 bg-primary text-white text-center space-y-4">
         <h2 className="font-decorative italic font-bold text-lg lg:text-2xl text-center">
@@ -45,7 +47,7 @@ export default function Page() {
         id="schedule"
         className="min-h-screen bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center"
       >
-        <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center mb-8 text-kimjeff">
+        <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center mb-8 text-kimjeff">
           Wedding Schedule
         </h2>
         <div className="text-center font-decorative text-lg lg:text-xl">
@@ -73,40 +75,44 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center">
+      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4">
         <div className="mb-8">
-          <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-kimjeff">
+          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             Attire
           </h2>
           <p className="font-decorative text-center">
             We would love to see you in your best and most comfortable
           </p>
         </div>
-        <div className="text-center font-decorative text-lg lg:text-xl">
-          <h3 className="italic text-2xl font-semibold mb-4">
-            For Entourage & Sponsors
-          </h3>
-          <p>Formal Attire</p>
+        <div className="space-y-6">
+          <div className="text-center font-decorative text-lg lg:text-xl">
+            <h3 className="italic text-2xl font-semibold mb-4">
+              For Entourage & Sponsors
+            </h3>
+            <p>Formal Attire</p>
+          </div>
+          <div className="text-center font-decorative text-lg lg:text-xl">
+            <h3 className="italic text-2xl font-semibold mb-4">For Guests</h3>
+            <p>Semi-formal Attire</p>
+          </div>
+          <div className="text-center font-decorative text-lg lg:text-xl">
+            <h3 className="italic text-2xl font-semibold mb-4">Dress Code</h3>
+            <img
+              src="/assets/kimjeff-attire-color-guide.svg"
+              alt="Kim and Jeff"
+              className="object-contain -my-40"
+            />
+          </div>
         </div>
-        <div className="text-center font-decorative text-lg lg:text-xl">
-          <h3 className="italic text-2xl font-semibold mb-4">For Guests</h3>
-          <p>Semi-formal Attire</p>
-        </div>
-
-        <img
-          src="/assets/kimjeff-attire-color-guide.svg"
-          alt="Kim and Jeff"
-          className="object-contain -my-40"
-        />
       </section>
 
-      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center">
+      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4">
         <div className="mb-8">
-          <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-kimjeff">
+          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             RSVP
           </h2>
           <p className="font-decorative text-center">
-            We would really love for you to be part of our special day!
+            We&apos;d really love for you to be part of our special day!
           </p>
         </div>
         <Button asChild size="cta" className="font-elegant">

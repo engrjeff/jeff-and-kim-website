@@ -46,7 +46,7 @@ export const FAQ = () => {
     >
       <div className="max-w-xl">
         <div className="mb-8">
-          <h2 className="font-elegant uppercase tracking-wider font-bold text-4xl text-center text-kimjeff">
+          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             Common Questions & Concerns
           </h2>
         </div>
