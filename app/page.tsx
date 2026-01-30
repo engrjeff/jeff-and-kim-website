@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+import { CountdownTimer } from '@/components/countdown-timer';
+import { SiteSection } from '@/components/site-section';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function Page() {
   return (
     <>
-      <section
-        id="home"
-        className="min-h-screen px-4 bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-top bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4"
-      >
+      <SiteSection id="home" background="1">
         <img
           src="/assets/monogram-v2-on-white.svg"
           alt="Kim and Jeff"
@@ -27,26 +27,27 @@ export default function Page() {
         </p>
 
         <blockquote className="text-center italic text-lg">
-          <p className=" lg:text-xl font-decorative mb-4">
+          <p className="lg:text-xl font-decorative mb-4">
             &ldquo;He has made everything beautiful in its time&rdquo;
           </p>
           <cite className="not-italic uppercase tracking-wider text-kimjeff font-semibold font-elegant text-sm">
             Ecclesiastes 3:11
           </cite>
         </blockquote>
-      </section>
-      <section className="px-6 py-10 lg:p-20 bg-primary text-white text-center space-y-4">
-        <h2 className="font-decorative italic font-bold text-lg lg:text-2xl text-center">
-          We want to celebrate our union with you!
+      </SiteSection>
+      <section className="text-center px-4 py-6 bg-primary text-white space-y-6">
+        <Suspense>
+          <CountdownTimer />
+        </Suspense>
+
+        <h2 className="lg:text-xl font-decorative mb-4 italic">
+          And we want to celebrate our union with you!
         </h2>
-        <Button asChild size="cta" className="dark font-elegant">
+        <Button asChild size="cta" className="dark">
           <Link href="/rsvp">RSVP Now</Link>
         </Button>
       </section>
-      <section
-        id="schedule"
-        className="min-h-screen bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center"
-      >
+      <SiteSection id="schedule" background="2">
         <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center mb-8 text-kimjeff">
           Wedding Schedule
         </h2>
@@ -73,9 +74,9 @@ export default function Page() {
             <a href="#map">View Map</a>
           </Button>
         </div>
-      </section>
+      </SiteSection>
 
-      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4">
+      <SiteSection background="3">
         <div className="mb-8">
           <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             Attire
@@ -104,9 +105,9 @@ export default function Page() {
             />
           </div>
         </div>
-      </section>
+      </SiteSection>
 
-      <section className="min-h-screen border border-b bg-[url(/assets/hero-mobile.png)] lg:bg-[url(/assets/hero.png)] bg-center bg-cover bg-no-repeat gap-3 flex flex-col items-center justify-center px-4">
+      <SiteSection background="4">
         <div className="mb-8">
           <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             RSVP
@@ -118,7 +119,7 @@ export default function Page() {
         <Button asChild size="cta" className="font-elegant">
           <Link href="/rsvp">Count me in</Link>
         </Button>
-      </section>
+      </SiteSection>
       <section id="map">
         <div className="flex items-center justify-center">
           <iframe

@@ -5,6 +5,7 @@ import { site } from '@/lib/site';
 import { Footer } from '@/components/footer';
 import { FAQ } from '@/components/faq';
 import { NavigationMenu } from '@/components/navigation-menu';
+import { ConvexClientProvider } from '@/components/convex-client-provider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -54,12 +55,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable} antialiased`}
       >
-        <NavigationMenu />
-        <main>
-          {children}
-          <FAQ />
-        </main>
-        <Footer />
+        <ConvexClientProvider>
+          <NavigationMenu />
+          <main>
+            {children}
+            <FAQ />
+          </main>
+          <Footer />
+        </ConvexClientProvider>
       </body>
     </html>
   );
