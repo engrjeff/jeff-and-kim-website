@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer';
 import { FAQ } from '@/components/faq';
 import { NavigationMenu } from '@/components/navigation-menu';
 import { ConvexClientProvider } from '@/components/convex-client-provider';
+import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -62,6 +63,7 @@ export default function RootLayout({
             <FAQ />
           </main>
           <Footer />
+          <ScrollToTopButton />
         </ConvexClientProvider>
       </body>
     </html>

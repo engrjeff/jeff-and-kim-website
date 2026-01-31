@@ -2,6 +2,7 @@
 import { CountdownTimer } from '@/components/countdown-timer';
 import { SiteSection } from '@/components/site-section';
 import { Button } from '@/components/ui/button';
+import { WeddingTimeline } from '@/components/wedding-timeline';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -35,7 +36,7 @@ export default function Page() {
           </cite>
         </blockquote>
       </SiteSection>
-      <section className="text-center px-4 py-6 bg-primary text-white space-y-6">
+      <section className="text-center px-4 py-10 bg-primary text-white space-y-6">
         <Suspense>
           <CountdownTimer />
         </Suspense>
@@ -75,8 +76,18 @@ export default function Page() {
           </Button>
         </div>
       </SiteSection>
-
       <SiteSection background="3">
+        <div className="mb-8">
+          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
+            Wedding Timeline
+          </h2>
+          <p className="font-decorative text-center">
+            Here is what you can expect in terms of the Order of Events
+          </p>
+        </div>
+        <WeddingTimeline />
+      </SiteSection>
+      <SiteSection background="4">
         <div className="mb-8">
           <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
             Attire
@@ -106,20 +117,20 @@ export default function Page() {
           </div>
         </div>
       </SiteSection>
-
-      <SiteSection background="4">
+      <section className="text-center px-4 py-10 bg-primary text-white space-y-6">
         <div className="mb-8">
-          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center text-kimjeff">
+          <h2 className="font-elegant uppercase tracking-wider font-medium text-4xl text-center">
             RSVP
           </h2>
           <p className="font-decorative text-center">
-            We&apos;d really love for you to be part of our special day!
+            We&apos;d really love for you to be there on our special day!
           </p>
         </div>
-        <Button asChild size="cta" className="font-elegant">
+        <Button asChild size="cta" className="font-elegant dark">
           <Link href="/rsvp">Count me in</Link>
         </Button>
-      </SiteSection>
+      </section>
+
       <section id="map">
         <div className="flex items-center justify-center">
           <iframe
@@ -131,6 +142,30 @@ export default function Page() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+        </div>
+      </section>
+
+      <section className="text-center px-4 py-10 bg-primary text-white">
+        <p className="font-decorative text-center text-xl mb-4">
+          Our official hashtags:
+        </p>
+        <p>#KIMpletelyAndJEFFinitelyJoinedAsOne</p>
+        <p>#KIMJEFFMoedim</p>
+      </section>
+
+      <section className="px-4 py-10">
+        <div className="max-w-lg mx-auto">
+          <p className="text-2xl italic text-center font-semibold font-decorative">
+            We invite you to our wedding day!
+          </p>
+          <img
+            src="/assets/kimjeff-collage.png"
+            alt="Jeff & Kim"
+            className="-my-8"
+          />
+          <p className="text-lg italic text-center font-semibold font-decorative">
+            Kim & Jeff
+          </p>
         </div>
       </section>
     </>

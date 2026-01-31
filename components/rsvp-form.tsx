@@ -11,10 +11,12 @@ import { useState, type FormEvent } from 'react';
 import confetti from 'canvas-confetti';
 
 function showConfetti() {
-  const end = Date.now() + 5 * 1000; // 5 seconds
+  const end = Date.now() + 3 * 1000; // 3 seconds
   const colors = ['#192859', '#2B4376', '#6C7EA7', '#889DB9', '#C0C2C1'];
+
   const frame = () => {
     if (Date.now() > end) return;
+
     confetti({
       particleCount: 2,
       angle: 60,
