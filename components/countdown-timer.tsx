@@ -47,7 +47,7 @@ export function CountdownTimer() {
   return (
     <div className="w-full justify-center flex flex-col items-center mx-auto text-center max-w-sm">
       <h3 className="text-center font-decorative italic lg:text-xl mb-3 md:mb-4">
-        The countdown to our forever begins in...
+        Our forever begins in...
       </h3>
       <div className="grid grid-cols-4 justify-center gap-2 md:gap-4">
         {timeUnits.map((unit) => (
