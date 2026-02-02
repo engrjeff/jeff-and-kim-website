@@ -54,8 +54,10 @@ import { useRouter } from 'next/navigation';
 export function RSVPForm() {
   const confirmRSVP = useMutation(api.guests.confirmRSVP);
   const router = useRouter();
+  const [guestName, setGuestName] = useState('');
   const [isPending, setIsPending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasConfirmedAlready, setHasConfirmedAlready] = useState(false);
 
   async function handleConfirmRSVP(event: FormEvent<HTMLFormElement>) {
     try {
@@ -66,12 +68,21 @@ export function RSVPForm() {
       const formData = new FormData(event.currentTarget);
 
       const guestId = formData.get('guestId') as Id<'guests'>;
+      const guestName = formData.get('guest') as string;
+      const hasConfirmedRsvp = formData.get('hasConfirmedRsvp') as string;
 
       if (!guestId) return;
+
+      if (hasConfirmedRsvp === 'confirmed') {
+        setGuestName(guestName);
+        setHasConfirmedAlready(true);
+        return;
+      }
 
       const result = await confirmRSVP({ id: guestId });
 
       if (result.success) {
+        setGuestName(guestName);
         setIsSuccess(true);
         showConfetti();
       }
@@ -105,8 +116,54 @@ export function RSVPForm() {
             </AlertDialogMedia>
             <AlertDialogTitle>Thank you!</AlertDialogTitle>
             <AlertDialogDescription>
+              Hi {guestName}! <br />
               We are so thankful for confirming your attendance on our wedding
               day! We look forward to seeing you there. Grace to you!
+              <br />
+              <br />
+              <span className="normal-case">~ kim & jeff</span>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel
+              size="lg"
+              onClick={() => {
+                router.replace('/');
+              }}
+            >
+              Close
+            </AlertDialogCancel>
+            <AlertDialogAction
+              size="lg"
+              onClick={() => {
+                router.replace('/#map');
+                setIsSuccess(false);
+              }}
+            >
+              View Map
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog
+        open={hasConfirmedAlready}
+        onOpenChange={setHasConfirmedAlready}
+      >
+        <AlertDialogContent size="sm">
+          <AlertDialogHeader>
+            <AlertDialogMedia className="bg-transparent">
+              <img
+                src="/assets/monogram-v2-on-white.svg"
+                alt="Kim and Jeff"
+                className="object-contain size-16"
+              />
+            </AlertDialogMedia>
+            <AlertDialogTitle>Thanks for coming back!</AlertDialogTitle>
+            <AlertDialogDescription>
+              Hi {guestName}! <br />
+              It looks like you have already RSVP&apos;d. <br />
+              We look forward to seeing you on our wedding day!
               <br />
               <br />
               <span className="normal-case">~ kim & jeff</span>

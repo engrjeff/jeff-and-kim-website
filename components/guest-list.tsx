@@ -36,6 +36,7 @@ function getGuestDescription(guest: Guest) {
 export function GuestList() {
   const guests = useQuery(api.guests.get);
   const [selectedGuestId, setSelectedGuestId] = useState('');
+  const [hasConfirmedRsvp, setHasConfirmedRsvp] = useState(false);
 
   return (
     <Combobox
@@ -46,13 +47,22 @@ export function GuestList() {
       onValueChange={(value) => {
         if (!value) {
           setSelectedGuestId('');
+          setHasConfirmedRsvp(false);
+
           return;
         }
 
         setSelectedGuestId(value._id);
+        setHasConfirmedRsvp(value.rsvp);
       }}
     >
       <input type="hidden" hidden name="guestId" value={selectedGuestId} />
+      <input
+        type="hidden"
+        hidden
+        name="hasConfirmedRsvp"
+        value={hasConfirmedRsvp ? 'confirmed' : ''}
+      />
       <ComboboxInput
         autoFocus
         name="guest"

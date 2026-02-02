@@ -7,6 +7,9 @@ import { FAQ } from '@/components/faq';
 import { NavigationMenu } from '@/components/navigation-menu';
 import { ConvexClientProvider } from '@/components/convex-client-provider';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { Map } from '@/components/map';
+import { OfficialHashtags } from '@/components/official-hashtags';
+import { Gallery } from '@/components/gallery';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -60,6 +63,9 @@ export default function RootLayout({
           <NavigationMenu />
           <main>
             {children}
+            <Gallery />
+            <OfficialHashtags />
+            <Map />
             <FAQ />
           </main>
           <Footer />

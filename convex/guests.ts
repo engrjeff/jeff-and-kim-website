@@ -4,9 +4,16 @@ import { mutation, query } from './_generated/server';
 export const get = query({
   args: {},
   handler: async (ctx) => {
+    return ctx.db.query('guests').collect();
+  },
+});
+
+export const getCofirmedRSVP = query({
+  args: {},
+  handler: async (ctx) => {
     return ctx.db
       .query('guests')
-      .filter((q) => q.eq(q.field('rsvp'), false))
+      .filter((q) => q.eq(q.field('rsvp'), true))
       .collect();
   },
 });

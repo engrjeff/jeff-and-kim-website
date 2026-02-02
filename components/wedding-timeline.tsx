@@ -11,7 +11,7 @@ const events: TimelineEvent[] = [
   { time: '2:30 PM', title: 'Arrival', Icon: MapPin },
   { time: '3:00 PM', title: 'Ceremony', Icon: Heart },
   { time: '4:30 PM', title: 'Reception', Icon: Utensils },
-  { time: '7:00 PM', title: 'Grand Exit', Icon: Sparkles, hideLine: true },
+  { time: '8:00 PM', title: 'Grand Exit', Icon: Sparkles, hideLine: true },
 ];
 
 function EventItem({ event }: { event: TimelineEvent }) {
