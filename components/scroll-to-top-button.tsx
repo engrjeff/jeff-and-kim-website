@@ -39,7 +39,7 @@ export function ScrollToTopButton() {
       size="icon-lg"
       aria-label="scroll to top"
       className={cn(
-        'fixed bottom-4 right-4 transition-transform',
+        'fixed bottom-4 right-4 transition-transform border border-white',
         shown ? 'scale-100' : 'scale-0',
       )}
       onClick={scrollToTop}
