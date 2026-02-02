@@ -2,14 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Inter, Cinzel, Playfair } from 'next/font/google';
 import './globals.css';
 import { site } from '@/lib/site';
-import { Footer } from '@/components/footer';
-import { FAQ } from '@/components/faq';
-import { NavigationMenu } from '@/components/navigation-menu';
 import { ConvexClientProvider } from '@/components/convex-client-provider';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { Map } from '@/components/map';
-import { OfficialHashtags } from '@/components/official-hashtags';
-import { Gallery } from '@/components/gallery';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -59,18 +52,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} ${playfair.variable} antialiased`}
       >
-        <ConvexClientProvider>
-          <NavigationMenu />
-          <main>
-            {children}
-            <Gallery />
-            <OfficialHashtags />
-            <Map />
-            <FAQ />
-          </main>
-          <Footer />
-          <ScrollToTopButton />
-        </ConvexClientProvider>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );
