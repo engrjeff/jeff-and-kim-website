@@ -11,5 +11,6 @@ export default defineSchema({
     rsvp: v.boolean(),
     side: v.string(),
     special_role: v.optional(v.string()),
+    tableNumber: v.optional(v.string()),
   }),
 });
