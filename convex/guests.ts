@@ -26,3 +26,10 @@ export const confirmRSVP = mutation({
     return { success: true };
   },
 });
+
+export const getById = query({
+  args: { id: v.id('guests') },
+  handler: async (ctx, args) => {
+    return ctx.db.get('guests', args.id);
+  },
+});
