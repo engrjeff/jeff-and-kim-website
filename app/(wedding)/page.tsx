@@ -35,6 +35,13 @@ export default function Page() {
             Ecclesiastes 3:11
           </cite>
         </blockquote>
+
+        <div className="space-y-4 mt-10 text-center">
+          <p>Already RSVP&apos;d?</p>
+          <Button asChild size="cta" className="font-elegant">
+            <Link href="/find-my-seat">Find My Seat</Link>
+          </Button>
+        </div>
       </SiteSection>
       <section className="text-center px-4 py-10 bg-primary text-white space-y-6">
         <Suspense>

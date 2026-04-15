@@ -2,6 +2,7 @@
 import { CountdownTimer } from '@/components/countdown-timer';
 import { RSVPForm } from '@/components/rsvp-form';
 import { SiteSection } from '@/components/site-section';
+import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Suspense } from 'react';
@@ -36,6 +37,13 @@ function RSVPPage() {
             RSVP
           </h1>
           <RSVPForm />
+        </div>
+
+        <div className="space-y-4 text-center">
+          <p>Already RSVP&apos;d?</p>
+          <Button asChild size="cta" className="font-elegant dark">
+            <Link href="/find-my-seat">Find My Seat</Link>
+          </Button>
         </div>
 
         <Link href="/" className="hover:underline">

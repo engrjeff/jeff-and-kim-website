@@ -22,6 +22,21 @@ import {
 } from '@/components/ui/alert-dialog';
 import { useRouter } from 'next/navigation';
 
+const SEAT_TABLE_MAP = {
+  'Table 1': '/assets/seat/1.gif',
+  'Table 2': '/assets/seat/2.gif',
+  'Table 3': '/assets/seat/3.gif',
+  'Table 4': '/assets/seat/4.gif',
+  'Table 5': '/assets/seat/5.gif',
+  'Table 6': '/assets/seat/6.gif',
+  'Table 7': '/assets/seat/7.gif',
+  'Table 8': '/assets/seat/8.gif',
+  'Table 9': '/assets/seat/9.gif',
+  'Table 10': '/assets/seat/10.gif',
+  'VIP Table 1': '/assets/seat/VIP 1.gif',
+  'VIP Table 2': '/assets/seat/VIP 2.gif',
+};
+
 export function FindMySeatForm() {
   const convex = useConvex();
   const router = useRouter();
@@ -32,6 +47,9 @@ export function FindMySeatForm() {
 
   const isPending = status === 'pending';
   const isSuccess = status === 'success';
+
+  const seatImageSrc =
+    SEAT_TABLE_MAP[tableNumber as keyof typeof SEAT_TABLE_MAP] ?? '';
 
   async function handleConfirmRSVP(event: FormEvent<HTMLFormElement>) {
     try {
@@ -90,19 +108,25 @@ export function FindMySeatForm() {
               <img
                 src="/assets/monogram-v2-on-white.svg"
                 alt="Kim and Jeff"
-                className="object-contain size-16"
+                className="object-contain size-10"
               />
             </AlertDialogMedia>
-            <AlertDialogTitle>Thank you!</AlertDialogTitle>
+            <AlertDialogTitle>Hi {guestName}!</AlertDialogTitle>
             <AlertDialogDescription>
-              Hi {guestName}! <br />
-              We are so thankful for your attendance on our wedding day!
+              We are delighted to be with you on our wedding day!
               <br />
-              <br />
-              You will be seated at <br />
-              <span className="font-bold text-xl mt-2 block">
+              You will find your seat here <br />
+              <span className="font-bold text-xl mt-2 block mb-4">
                 {tableNumber}
               </span>
+              {seatImageSrc && (
+                <img
+                  src={seatImageSrc}
+                  alt=""
+                  width="100%"
+                  className="h-85 w-full object-contain"
+                />
+              )}
               <br />
               <span className="normal-case">~ kim & jeff</span>
             </AlertDialogDescription>
